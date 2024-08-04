@@ -1,0 +1,366 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('night-camp-forest-tents-campfire-600nw-2304185023-Photoroom_upscayl_4x_realesrgan-x4plus.png');
+    background-size: cover; /* Ensure the image covers the entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    height: 100vh; /* Full height of the viewport */
+    color: white; /* White text for contrast */
+}
+
+
+
+main {
+    position: relative;
+    font-family: cursive;
+    display: block;
+    text-align:justify; 
+    font-size: 15px;
+    margin: 0;
+    padding-top: 100px;
+    padding-left: 50px;
+    padding-right: 60%;
+}
+
+
+
+/*-----------------------------------------Vapour Animation-------------------------------------*/
+
+
+
+.vapour{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    z-index: 1;
+}
+.vapour span{
+    position: relative;
+    bottom: 50px;
+    display: block;
+    margin: 0 2px 50px;
+    min-width: 8px;
+    height: 120px;
+    background: #fff;
+    border-radius: 50%;
+    animation: animate1 5s linear infinite;
+    opacity: 0;
+    filter: blur(8px);
+    animation-delay: calc(var(--i) * -0.5s);
+}
+@keyframes animate1{
+    0%{
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+    15%{
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(-150px) scaleX(5);
+    }
+    95%{
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(-300px) scaleX(10);
+    }
+}
+
+
+
+/*----------------------------------------Yellow Fire Animation--------------------------------------------*/
+
+
+
+.yellow-fire {
+    position: absolute;
+    left: 50%;
+    top: 90%; /* Adjust to position fire below vapour */
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 0;
+}
+
+.yellow-fire span {
+    position: fixed;
+    bottom: 0;
+    display: block;
+    margin: 0 1px 50px;
+    min-width: 6px;
+    height: 60px;
+    background: #f1da0a;
+    border-radius: 50%;
+    animation: animate2 5s linear infinite;
+    opacity: 0;
+    filter: blur(2px);
+    animation-delay: calc(var(--j) * -0.5s); 
+}
+
+@keyframes animate2 {
+    0% {
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-30px) scaleX(2);
+    }
+    95% {
+        opacity: 0.2; 
+    }
+    100% {
+        transform: translateY(-25) scaleX(4);
+        opacity: 0.5;
+    }
+}
+
+
+
+/*------------------------------------------Red Fire Animation----------------------------------------------*/
+
+
+
+.red-fire {
+    position: absolute;
+    left: 50%;
+    top: 90%; 
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 0;
+}
+
+.red-fire span {
+    position: fixed;
+    bottom: 0;
+    display: block;
+    margin: 0 1px 50px;
+    min-width: 8px;
+    height: 115px;
+    background: #f1570a;
+    border-radius: 50%;
+    animation: animate3 5s linear infinite;
+    opacity: 0;
+    filter: blur(1.5px);
+    animation-delay: calc(var(--k) * -0.5s); 
+}
+@keyframes animate3{
+    0%{
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+    15%{
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(-40px) scaleX(7);
+    }
+    95%{
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(25px) scaleX(14);
+    }
+}
+
+
+
+/*-----------------------------Red Sparkle Animation----------------------------*/
+
+
+
+.sparkle1 {
+    position: absolute;
+    left: 50%;
+    top: 65%; 
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 0;
+}
+
+.sparkle1 span {
+    position: relative;
+    bottom: 0;
+    display: block;
+    margin: 0 1px 50px;
+    min-width: 4px;
+    height: 4px;
+    background: rgb(253, 31, 1);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 179, 0), 0 0 30px rgb(254, 4, 4);
+    opacity: 0;
+    animation: sparkle1 5s linear infinite;
+    animation-delay: calc(var(--h) * 0.5s); /* Delay based on the index */
+}
+
+@keyframes sparkle1 {
+    0% {
+        transform: translate(-50%, 0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        transform: translate(-50%, -20px) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -200px) scale(0.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -400px) scale(0);
+        opacity: 0;
+    }
+}
+
+
+
+/*------------------------------------Audio Button------------------------------------- */
+
+
+
+.audio-container {
+    text-align: center;
+    position: absolute;
+    left: 95%;
+    top: 91%; 
+    transform: translateX(-50%,-50%);
+    display: flex;
+    z-index: 1;
+}
+
+audio {
+    display: none; 
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.2); 
+    border: 2px solid rgba(255, 255, 255, 0.5); 
+    color: white; 
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+/*---------------------------header&footer--------------------------- */
+
+
+
+header {
+    background-color: rgba(0, 0, 0, 0.2); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    color: white; /* Text color */
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header .container {
+    height: 60px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+    font-family: monospace;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+    border-radius: 50px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: monospace;
+}
+
+nav ul li a {
+    position: relative; 
+    color: #fff;
+    text-decoration: none;
+    padding-bottom: 5px; 
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px; 
+    background: linear-gradient(90deg, #1457ff, #7c3bff, #ff00d4);
+    transform: scaleX(0); 
+    transform-origin: bottom right; 
+    transition: transform 0.3s ease; 
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1); 
+    transform-origin: bottom left; 
+}
+
+
+footer {
+    background-color: rgba(0, 0, 0, 0.2); 
+    border-top: 1px solid rgba(255, 255, 255, 0.5); 
+    color: white; 
+    padding-top: 5px;
+    padding-bottom: 45px;
+    
+    position: absolute;
+    height: 50px;
+    top: 93.9%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    text-align: justify;
+}
+
+footer .container {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
